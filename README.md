@@ -9,6 +9,9 @@ TODO
 #### Random Agent
 ![](p1-navigation-random-agent-001.gif)
 
+#### Baseline (fc 64-64) Agent
+![](p1-navigation-baseline-agent-001.gif)
+
 #### Trained Agent
 
 TODO
