@@ -26,13 +26,27 @@ class DQNAgent:
             learning_rate: float = 5e-4,
             update_network_every: int = 4,
             seed: int = 0):
-        """Initialize an Agent object.
-        
-        Params
-        ======
-            state_size (int): dimension of each state
-            action_size (int): dimension of each action
-            seed (int): random seed
+        """
+
+        Parameters
+        ----------
+        state_size
+            Size of state space
+        action_size
+            Size of action space
+        buffer_size
+            Maximum size of buffer for storing experiences
+        batch_size
+            Size of Each training batch
+        gamma_discount_factor
+            Discount factor
+        tau_soft_update
+            Interpolation parameter for soft network weight update
+        learning_rate
+            Learning rate
+        update_network_every
+            Update network weight every `update_network_every` time steps
+        seed
         """
         self.state_size = state_size
         self.action_size = action_size
@@ -76,12 +90,19 @@ class DQNAgent:
                 self.learn(experiences, self.gamma_discount_factor)
 
     def act(self, state, eps=0.):
-        """Returns actions for given state as per current policy.
-        
-        Params
-        ======
-            state (array_like): current state
-            eps (float): epsilon, for epsilon-greedy action selection
+        """Returns action for given state as per current policy.
+
+        Parameters
+        ----------
+        state : array-like
+            current state
+        eps:
+            epsilon for epsilon-greedy action selection
+
+        Returns
+        -------
+        int
+            action
         """
         state = torch.from_numpy(state).float().unsqueeze(0).to(DEVICE)
         self.qnetwork_local.eval()
@@ -99,12 +120,16 @@ class DQNAgent:
             self,
             experiences: Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor],
             gamma: float):
-        """Update value parameters using given batch of experience tuples.
+        """
+        Learn from experiences apply soft update for network weights.
 
-        Params
-        ======
-            experiences: tuple of (s, a, r, s', done) tuples
-            gamma: discount factor
+        Parameters
+        ----------
+        experiences
+            tuple of (s, a, r, s', done) tuples
+        gamma
+            discount factor
+
         """
         states, actions, rewards, next_states, dones = experiences
 
@@ -131,11 +156,14 @@ def _soft_update(local_model, target_model, tau):
     """Soft update model parameters.
     θ_target = τ*θ_local + (1 - τ)*θ_target
 
-    Params
-    ======
-        local_model (PyTorch model): weights will be copied from
-        target_model (PyTorch model): weights will be copied to
-        tau (float): interpolation parameter
+    Parameters
+    ----------
+    local_model : PyTorch model
+        weights will be copied from
+    target_model : PyTorch model
+        weights will be copied to
+    tau : float
+        interpolation parameter
     """
     for target_param, local_param in zip(target_model.parameters(), local_model.parameters()):
         target_param.data.copy_(tau*local_param.data + (1.0-tau)*target_param.data)
@@ -152,13 +180,18 @@ class ReplayBuffer:
             seed: int):
         """Initialize a ReplayBuffer object.
 
-        Params
-        ======
-            action_size: dimension of each action
-            buffer_size: maximum size of buffer
-            batch_size: size of each training batch
-            seed: random seed
+        Parameters
+        ----------
+        action_size
+            dimension of each action
+        buffer_size
+            maximum size of buffer
+        batch_size
+            size of each training batch
+        seed
+            random seed
         """
+
         self.action_size = action_size
         self.memory = deque(maxlen=buffer_size)  
         self.batch_size = batch_size
