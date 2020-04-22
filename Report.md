@@ -54,11 +54,11 @@ Scores every 5 episodes are reported in [Navigation.ipynb](https://github.com/da
 To improve agent performance, the following steps should be taken:
 
 - Experiment with more Neural Network architectures, i.e. add convolutional layers to the network.
-- Implement Double DQN agent.
-- Implement Prioritized Experience Replay.
-- Implement Dueling DQN.
-- Implement multi-step bootstrap targets.
-- Implement Distributional DQN.
-- Implement Noisy DQN.
-- Combine the above DNQ improvements into one - implement Rainbow algorithm.
+- Implement Double DQN algorithm. Paper [here](https://arxiv.org/abs/1509.06461).
+- Implement Prioritized Experience Replay. Paper [here](https://arxiv.org/abs/1511.05952)
+- Implement Dueling DQN. Paper [here](https://arxiv.org/abs/1511.06581).
+- Implement multi-step bootstrap targets. Paper [here](https://arxiv.org/abs/1602.01783).
+- Implement Distributional DQN. Paper [here](https://arxiv.org/abs/1707.06887).
+- Implement Noisy DQN. Paper [here](https://arxiv.org/abs/1706.10295).
+- Combine the above DNQ improvements into one - implement Rainbow algorithm. Paper [here](https://arxiv.org/abs/1710.02298).
 - Perform hyper parameter turing.
