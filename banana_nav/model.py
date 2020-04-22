@@ -1,3 +1,5 @@
+from typing import Dict, Any
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -33,3 +35,10 @@ class QNetwork(nn.Module):
         x = F.relu(self.fc1(state))
         x = F.relu(self.fc2(x))
         return F.softmax(self.fc3(x), dim=1)
+
+    @property
+    def metadata(self) -> Dict[str, Any]:
+        # TODO: return JSON serializable network structure
+        return {
+
+        }
