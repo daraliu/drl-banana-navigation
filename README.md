@@ -11,6 +11,8 @@ The task is episodic. A reward of +1 is provided for collecting a yellow banana,
 
 The environment is considered solved if the average score of the last 100 episodes is above 13.0.
 
+[`banana_nav`](https://github.com/daraliu/drl-banana-navigation) package is inspired by the examples from [Udacity Deep Reinforcent Learning Nano Degree repository](https://github.com/udacity/deep-reinforcement-learning).
+
 Results are below, more details are provided in the [report](https://github.com/daraliu/drl-banana-navigation/blob/master/Report.md).
 
 #### Random Agent
@@ -26,8 +28,8 @@ The repository contains a Python package `banana-nav` that has command line inte
 a demo with a trained agent or to use a Random agent.
 
 **Important Notice:**
-The DQN agent was trained with using PyTorch 1.4.0 (due to need for CUDA10 to use local GPU). 
-However, the version `unityagents` is 0.4.0. Both `pytorch` and `unityagents` packages are required, 
+The DQN agent was trained with using PyTorch 1.4.0 (due to need for CUDA10 to use local GPU).
+However, the version `unityagents` is 0.4.0. Both `pytorch` and `unityagents` packages are required,
 but were omitted from requirements in `setup.py` to prevent installation from PyPi.
 
 
@@ -49,13 +51,13 @@ and as a command line option if using the `banana-nav demo-dqn` command.
 
 The agent is trained using [Navigation.ipynb](https://github.com/daraliu/drl-banana-navigation/blob/master/notebooks/Navigation.ipynb) Jupyter notebook.
 
-### Demo 
+### Demo
 
-Once the package in installed, `banana-nav` command group becomes available with 
+Once the package is installed, `banana-nav` command group becomes available with
 the command `demo-dqn` to run a demo with trained of Random agent.
 
 ```
-» banana-nav demo-dqn --help                                                                                                                                                                                                                                                            7s 
+» banana-nav demo-dqn --help
 Usage: banana-nav demo-dqn [OPTIONS] [PATH_WEIGHTS]
 
   Run a demo of Banana Navigation agent - trained or random (if no weights

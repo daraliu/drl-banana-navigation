@@ -14,7 +14,7 @@ setup(
     ],
     author="Darius Aliulis",
     author_email="darius.aliulis@gmail.com",
-    description="Deep Q-Learning Agent for Unity Banana Navigation Environment",
+    description="Deep Q-Network Agent for Unity Banana Navigation Environment",
     url="https://github.com/daraliu/drl-banana-navigation",
     entry_points='''
         [console_scripts]
