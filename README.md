@@ -7,10 +7,10 @@ Training an agent to navigate and collect bananas in a large square world.
 TODO
 
 #### Random Agent
-![](p1-navigation-random-agent-001.gif)
+![](img/p1-navigation-random-agent-001.gif)
 
 #### Baseline (fc 64-64) Agent
-![](p1-navigation-baseline-agent-001.gif)
+![](img/p1-navigation-baseline-agent-001.gif)
 
 #### Trained Agent
 
